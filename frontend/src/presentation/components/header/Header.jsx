@@ -3,6 +3,7 @@ import logo from "../../assets/logoFilmNecting.png";
 import "./Header.css";
 import ModalLog from '../modalLog/ModalLog';
 import ModalUser from '../modalUser/ModalUser';
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isLogModalOpen, setIsLogModalOpen] = useState(false);
