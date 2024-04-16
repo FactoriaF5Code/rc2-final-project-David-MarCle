@@ -7,283 +7,262 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "films")
+@Table(name = "peliculas")
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String title;
-    private String country;
-    private Integer year;
-    private Integer lenght;
-    private String type;
+    private String titulo;
+    private String pais;
+    private Integer año;
+    private String duracion;
+    private String tipo;
     private String director;
-    private String assistant_director;
-    private String production;
-    private String executive_production;
-    private String script;
-    private String editing;
-    private String art_design;
-    private String photography;
-    private String music;
-    private String animation;
-    private String sound;
-    private String camera;
-    private String camera_assistant;
-    private String costume_design;
-    private String cast;
-    private String synopsis;
-    private String url_film;
-    private String url_poster;
-    private String contact;
-    private String festival_awards;
+    private String asistente_director;
+    private String produccion;
+    private String produccion_ejecutiva;
+    
+    private String edicion;
+    private String diseño_arte;
+    private String fotografia;
+    private String musica;
+    private String animacion;
+    private String sonido;
+    private String camara;
+    private String asistente_camara;
+    private String diseño_vestuario;
+    private String reparto;
+    private String sinopsis;
+    private String url_pelicula;
+    private String url_cartel;
+    private String contacto;
+    
 
+    
     public Film() {
-
     }
 
-    public Film(Integer id, String title,  String country, Integer year, Integer lenght, String type, String director, String assistant_director, String production, String executive_production, String script, String editing, String art_design, String photography, String music, String animation, String sound, String camera, String camera_assistant, String costume_design, String cast, String synopsis, String url_film, String url_poster, String contact, String festival_awards) {
-    
-   
-     
+    public Film(Integer id, String titulo, String pais, Integer año, String duracion, String tipo, String director, String asistenteDirector, String produccion, String produccionEjecutiva, String edicion, String diseñoArte, String fotografia, String musica, String animacion, String sonido, String camara, String asistenteCamara, String diseñoVestuario, String reparto, String sinopsis, String urlPelicula, String urlCartel, String contacto, String premiosFestival) {
         this.id = id;
-        this.title = title;
-        this.country = country; 
-        this.year = year;
-        this.lenght = lenght;
-        this.type = type;
+        this.titulo = titulo;
+        this.pais = pais;
+        this.año = año;
+        this.duracion = duracion;
+        this.tipo = tipo;
         this.director = director;
-        this.assistant_director = assistant_director;
-        this.production = production;
-        this.executive_production = executive_production;
-        this.script = script;
-        this.editing = editing;
-        this.art_design = art_design;
-        this.photography = photography;
-        this.music = music;
-        this.animation = animation;
-        this.sound = sound;
-        this.camera = camera;
-        this.camera_assistant = camera_assistant;
-        this.costume_design = costume_design;
-        this.cast = cast;
-        this.synopsis = synopsis;
-        this.url_film = url_film;
-        this.url_poster = url_poster;
-        this.contact = contact;
-        this.festival_awards = festival_awards;
-
-
+        this.asistente_director = asistenteDirector;
+        this.produccion = produccion;
+        this.produccion_ejecutiva = produccionEjecutiva;
+        this.edicion = edicion;
+        this.diseño_arte = diseñoArte;
+        this.fotografia = fotografia;
+        this.musica = musica;
+        this.animacion = animacion;
+        this.sonido = sonido;
+        this.camara = camara;
+        this.asistente_camara = asistenteCamara;
+        this.diseño_vestuario = diseñoVestuario;
+        this.reparto = reparto;
+        this.sinopsis = sinopsis;
+        this.url_pelicula = urlPelicula;
+        this.url_cartel = urlCartel;
+        this.contacto = contacto;
+        
     }
   
     public Integer getId() {
         return id;
-    }
-    
-    public String getTitle() {
-        return title;
-    }
-   
-   
-
-   public String getCountry() {
-        return country;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public Integer getLenght() {
-        return lenght;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public String getAssistant_director() {
-        return assistant_director;
-    }
-
-    public String getProduction() {
-        return production;
-    }
-
-    public String getExecutive_production() {
-        return executive_production;
-    }
-
-    public String getScript() {
-        return script;
-    }
-
-    public String getEditing() {
-        return editing;
-    }
-
-    public String getArt_design() {
-        return art_design;
-    }
-
-    public String getPhotography() {
-        return photography;
-    }
-
-    public String getMusic() {
-        return music;
-    }
-
-    public String getAnimation() {
-        return animation;
-    }
-
-    public String getSound() {
-        return sound;
-    }
-
-    public String getCamera() {
-        return camera;
-    }
-
-    public String getCamera_assistant() {
-        return camera_assistant;
-    }
-
-    public String getCostume_design() {
-        return costume_design;
-    }
-
-    public String getCast() {
-        return cast;
-    }
-
-    public String getSynopsis() {
-        return synopsis;
-    }
-
-    public String getUrl_film() {
-        return url_film;
-    }
-
-    public String getUrl_poster() {
-        return url_poster;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public String getFestival_awards() {
-        return festival_awards;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public String getPais() {
+        return pais;
     }
 
-    public void setLenght(Integer lenght) {
-        this.lenght = lenght;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public Integer getAño() {
+        return año;
+    }
+
+    public void setAño(Integer año) {
+        this.año = año;
+    }
+
+    public String getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(String duracion) {
+        this.duracion = duracion;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getDirector() {
+        return director;
     }
 
     public void setDirector(String director) {
         this.director = director;
     }
 
-    public void setAssistant_director(String assistant_director) {
-        this.assistant_director = assistant_director;
+    public String getAsistenteDirector() {
+        return asistente_director;
     }
 
-    public void setProduction(String production) {
-        this.production = production;
+    public void setAsistenteDirector(String asistenteDirector) {
+        this.asistente_director = asistenteDirector;
     }
 
-    public void setExecutive_production(String executive_production) {
-        this.executive_production = executive_production;
+    public String getProduccion() {
+        return produccion;
     }
 
-    public void setScript(String script) {
-        this.script = script;
+    public void setProduccion(String produccion) {
+        this.produccion = produccion;
     }
 
-    public void setEditing(String editing) {
-        this.editing = editing;
+    public String getProduccionEjecutiva() {
+        return produccion_ejecutiva;
     }
 
-    public void setArt_design(String art_design) {
-        this.art_design = art_design;
+    public void setProduccionEjecutiva(String produccionEjecutiva) {
+        this.produccion_ejecutiva = produccionEjecutiva;
     }
 
-    public void setPhotography(String photography) {
-        this.photography = photography;
+    public String getEdicion() {
+        return edicion;
     }
 
-    public void setMusic(String music) {
-        this.music = music;
+    public void setEdicion(String edicion) {
+        this.edicion = edicion;
     }
 
-    public void setAnimation(String animation) {
-        this.animation = animation;
+    public String getDiseñoArte() {
+        return diseño_arte;
     }
 
-    public void setSound(String sound) {
-        this.sound = sound;
+    public void setDiseñoArte(String diseñoArte) {
+        this.diseño_arte = diseñoArte;
     }
 
-    public void setCamera(String camera) {
-        this.camera = camera;
+    public String getFotografia() {
+        return fotografia;
     }
 
-    public void setCamera_assistant(String camera_assistant) {
-        this.camera_assistant = camera_assistant;
+    public void setFotografia(String fotografia) {
+        this.fotografia = fotografia;
     }
 
-    public void setCostume_design(String costume_design) {
-        this.costume_design = costume_design;
+    public String getMusica() {
+        return musica;
     }
 
-    public void setCast(String cast) {
-        this.cast = cast;
+    public void setMusica(String musica) {
+        this.musica = musica;
     }
 
-    public void setSynopsis(String synopsis) {
-        this.synopsis = synopsis;
+    public String getAnimacion() {
+        return animacion;
     }
 
-    public void setUrl_film(String url_film) {
-        this.url_film = url_film;
+    public void setAnimacion(String animacion) {
+        this.animacion = animacion;
     }
 
-    public void setUrl_poster(String url_poster) {
-        this.url_poster = url_poster;
+    public String getSonido() {
+        return sonido;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setSonido(String sonido) {
+        this.sonido = sonido;
     }
 
-    public void setFestival_awards(String festival_awards) {
-        this.festival_awards = festival_awards;
+    public String getCamara() {
+        return camara;
     }
+
+    public void setCamara(String camara) {
+        this.camara = camara;
+    }
+
+    public String getAsistenteCamara() {
+        return asistente_camara;
+    }
+
+    public void setAsistenteCamara(String asistenteCamara) {
+        this.asistente_camara = asistenteCamara;
+    }
+
+    public String getDiseñoVestuario() {
+        return diseño_vestuario;
+    }
+
+    public void setDiseñoVestuario(String diseñoVestuario) {
+        this.diseño_vestuario = diseñoVestuario;
+    }
+
+    public String getReparto() {
+        return reparto;
+    }
+
+    public void setReparto(String reparto) {
+        this.reparto = reparto;
+    }
+
+    public String getSinopsis() {
+        return sinopsis;
+    }
+
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
+    }
+
+    public String getUrlPelicula() {
+        return url_pelicula;
+    }
+
+    public void setUrlPelicula(String urlPelicula) {
+        this.url_pelicula = urlPelicula;
+    }
+
+    public String getUrlCartel() {
+        return url_cartel;
+    }
+
+    public void setUrlCartel(String urlCartel) {
+        this.url_cartel = urlCartel;
+    }
+
+    public String getContacto() {
+        return contacto;
+    }
+
+    public void setContacto(String contacto) {
+        this.contacto = contacto;
+    }
+
+   
+
+    
 }
-
