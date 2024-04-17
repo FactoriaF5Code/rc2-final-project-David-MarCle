@@ -1,5 +1,6 @@
 package com.filmnecting.filmnectingproject.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -34,7 +35,8 @@ public class Film {
     private String reparto;
     private String sinopsis;
     private String url_pelicula;
-    private String urlCartel;
+   
+    private String url_cartel;
     private String contacto;
     
 
@@ -65,7 +67,7 @@ public class Film {
         this.reparto = reparto;
         this.sinopsis = sinopsis;
         this.url_pelicula = urlPelicula;
-        this.urlCartel = urlCartel;
+        this.url_cartel = urlCartel;
         this.contacto = contacto;
         
     }
@@ -247,11 +249,11 @@ public class Film {
     }
 
     public String getUrlCartel() {
-        return urlCartel;
+        return url_cartel;
     }
 
     public void setUrlCartel(String urlCartel) {
-        this.urlCartel = urlCartel;
+        this.url_cartel = urlCartel;
     }
 
     public String getContacto() {
