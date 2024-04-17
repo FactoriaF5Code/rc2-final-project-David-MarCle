@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "peliculas")
+@Table(name = "cortometrajes")
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class Film {
     private String reparto;
     private String sinopsis;
     private String url_pelicula;
-    private String url_cartel;
+    private String urlCartel;
     private String contacto;
     
 
@@ -65,7 +65,7 @@ public class Film {
         this.reparto = reparto;
         this.sinopsis = sinopsis;
         this.url_pelicula = urlPelicula;
-        this.url_cartel = urlCartel;
+        this.urlCartel = urlCartel;
         this.contacto = contacto;
         
     }
@@ -247,11 +247,11 @@ public class Film {
     }
 
     public String getUrlCartel() {
-        return url_cartel;
+        return urlCartel;
     }
 
     public void setUrlCartel(String urlCartel) {
-        this.url_cartel = urlCartel;
+        this.urlCartel = urlCartel;
     }
 
     public String getContacto() {

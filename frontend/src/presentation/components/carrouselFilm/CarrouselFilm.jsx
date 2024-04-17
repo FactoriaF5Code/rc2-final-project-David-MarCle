@@ -1,23 +1,30 @@
-import React, { useState, useRef } from 'react';
+import  { useState, useRef, useEffect } from 'react';
 import './CarrouselFilm.css';
-import data from '../../../../json_server/data.json';
 
 const CarrouselFilm = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [filterType, setFilterType] = useState(null);
   const [filterCountry, setFilterCountry] = useState(null);
+  const [filmsData, setFilmsData] = useState([]);
   const thumbnailContainerRef = useRef(null);
 
-  const handleFilterType = (type) => {
+  useEffect(() => {
+    fetch('http://localhost:8080/api/films')
+      .then(response => response.json())
+      .then(data => setFilmsData(data))
+      .catch(error => console.error('Error fetching films:', error));
+  }, []);
+
+  const handleFilterType = (tipo) => {
     setCurrentIndex(0);
-    setFilterType(type);
+    setFilterType(tipo);
     setFilterCountry(null);
     scrollPageToTop();
   };
 
-  const handleFilterCountry = (country) => {
+  const handleFilterCountry = (pais) => {
     setCurrentIndex(0);
-    setFilterCountry(country);
+    setFilterCountry(pais);
     setFilterType(null);
     scrollPageToTop();
   };
@@ -26,12 +33,12 @@ const CarrouselFilm = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const filteredResults = data.Film.results.filter(item => {
-    const typeMatch = !filterType || (Array.isArray(item.type) ? item.type.includes(filterType) : item.type === filterType);
-    const countryMatch = !filterCountry || item.country === filterCountry;
+  const filteredResults = filmsData.filter(item => {
+    const typeMatch = !filterType || (Array.isArray(item.tipo) ? item.tipo.includes(filterType) : item.tipo === filterType);
+    const countryMatch = !filterCountry || item.pais === filterCountry;
     return typeMatch && countryMatch;
   });
-
+  console.log(filteredResults); 
   const currentItem = filteredResults[currentIndex];
 
   return (
@@ -44,50 +51,55 @@ const CarrouselFilm = () => {
         <button onClick={() => handleFilterType("Thriller")}>Thriller</button>
         <button onClick={() => handleFilterType("Sci-Fi")}>Sci-Fi</button>
         <button onClick={() => handleFilterCountry("Venezuela")}>Venezuela</button>
-        <button onClick={() => handleFilterCountry("Spain")}>España</button>
+        <button onClick={() => handleFilterCountry("España")}>España</button>
         <button onClick={() => handleFilterCountry("Argentina")}>Argentina</button>
       </div>
 
       <div className="carrousel-content" ref={thumbnailContainerRef}>
         <div className="row">
           <div className="column">
-            {currentItem && currentItem.url_poster && (
+            {currentItem && currentItem.urlCartel && (
               <img
-                src={currentItem.url_poster}
-                alt={currentItem.title}
+                src={currentItem.urlCartel}
+                alt={currentItem.titulo}
                 className="poster-image"
               />
+              
+              
             )}
           </div>
           <div className="column">
             <div className="description">
               {currentItem && (
                 <>
-                  <h2>Título:  {currentItem.title}</h2>
-                  <p>País:  {currentItem.country}</p>
-                  <p>Año:  {currentItem.year}</p>
-                  <p>Duración:  {currentItem.length}</p>
-                  <p>Género:  {Array.isArray(currentItem.type) ? currentItem.type.join(', ') : currentItem.type}</p>
+                  <h2>Título:  {currentItem.titulo}</h2>
+                  <p>País:  {currentItem.pais}</p>
+                  <p>Año:  {currentItem.año}</p>
+                  <p>Duración:  {currentItem.duracion}</p>
+                  <p>Género:  {Array.isArray(currentItem.tipo) ? currentItem.tipo.join(', ') : currentItem.tipo}</p>
                   <p>Director:  {currentItem.director}</p>
-                  <p>Actores:  {currentItem.cast}</p>
-                  <p>Cámara:  {currentItem.camera}</p>
+                  <p>Actores:  {currentItem.reparto}</p>
+                  <p>Cámara:  {currentItem.camara}</p>
                 </>
               )}
             </div>
           </div>
         </div>
         <div className="thumbnail-container">
-          {filteredResults.map((item, index) => (
+          {filteredResults.map((item, id) => (
+            
+            
             <img
-              key={index}
-              src={item.url_poster}
-              alt={item.title}
-              className={`thumbnail ${index === currentIndex ? 'active' : ''}`}
+              key={id}
+              src={item.urlCartel}
+              alt={item.titulo}
+              className={`thumbnail ${id === currentIndex ? 'active' : ''}`}
               onClick={() => {
-                setCurrentIndex(index);
+                setCurrentIndex(id);
                 scrollPageToTop();
               }}
             />
+          
           ))}
         </div>
       </div>
@@ -96,4 +108,3 @@ const CarrouselFilm = () => {
 };
 
 export default CarrouselFilm;
-
