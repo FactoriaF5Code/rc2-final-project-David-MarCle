@@ -1,5 +1,6 @@
 import  { useState, useRef, useEffect } from 'react';
 import './CarrouselFilm.css';
+import ModalFilm from '../modalFilm/ModalFilm';
 
 const CarrouselFilm = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -7,6 +8,7 @@ const CarrouselFilm = () => {
   const [filterCountry, setFilterCountry] = useState(null);
   const [filmsData, setFilmsData] = useState([]);
   const thumbnailContainerRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/films')
@@ -58,6 +60,7 @@ const CarrouselFilm = () => {
       <div className="carrousel-content" ref={thumbnailContainerRef}>
         <div className="row">
           <div className="column">
+          <button className="watch-video-button" onClick={() => setShowModal(true)}>Ver vídeo</button>
             {currentItem && currentItem.urlCartel && (
               <img
                 src={currentItem.urlCartel}
@@ -103,6 +106,8 @@ const CarrouselFilm = () => {
           ))}
         </div>
       </div>
+        {/* Modal */}
+        {showModal && <ModalFilm onClose={() => setShowModal(false)} />}
     </div>
   );
 };

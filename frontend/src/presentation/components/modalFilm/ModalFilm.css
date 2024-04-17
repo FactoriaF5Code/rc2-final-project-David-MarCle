@@ -1,0 +1,56 @@
+/* Estilos para el modal */
+.modalFilm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+   
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalFilm__content {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .close-modalFilm-button {
+    
+    cursor: pointer;
+    font-size: 35rem;
+    color: red;
+    z-index: 100;
+    justify-content: start;
+  }
+  
+  /* Estilos específicos para el modal de video */
+  .video-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Estilos para el video */
+  iframe {
+    width: 85rem;
+    height: 85rem;
+    border: none;
+    border-radius: 8px;
+  }
+  
