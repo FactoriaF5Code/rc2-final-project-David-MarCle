@@ -1,21 +1,17 @@
-import  { useState, useRef, useEffect } from 'react';
+import  { useState, useRef } from 'react';
+import { useMovieContext } from '../../../middleware/context/MovieContext';
+import { filterMovies } from '../../../services/MovieService';
 import './CarrouselFilm.css';
-import ModalFilm from '../modalFilm/ModalFilm';
+import FilterButtons from './FilterButtons';
+import CarrouselContent from './CarrouselContent';
 
 const CarrouselFilm = () => {
+  const { filmsData } = useMovieContext();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [filterType, setFilterType] = useState(null);
   const [filterCountry, setFilterCountry] = useState(null);
-  const [filmsData, setFilmsData] = useState([]);
-  const thumbnailContainerRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    fetch('http://localhost:8080/api/films')
-      .then(response => response.json())
-      .then(data => setFilmsData(data))
-      .catch(error => console.error('Error fetching films:', error));
-  }, []);
+  const thumbnailContainerRef = useRef(null);
 
   const handleFilterType = (tipo) => {
     setCurrentIndex(0);
@@ -35,79 +31,25 @@ const CarrouselFilm = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const filteredResults = filmsData.filter(item => {
-    const typeMatch = !filterType || (Array.isArray(item.tipo) ? item.tipo.includes(filterType) : item.tipo === filterType);
-    const countryMatch = !filterCountry || item.pais === filterCountry;
-    return typeMatch && countryMatch;
-  });
-  console.log(filteredResults); 
+  const filteredResults = filterMovies(filmsData, filterType, filterCountry);
   const currentItem = filteredResults[currentIndex];
 
   return (
     <div className="carrousel-container">
-      <div className="filter-container">
-        <button className='filter-containerButton' onClick={() => handleFilterType("Comedy")}>Comedia</button>
-        <button onClick={() => handleFilterType("Horror")}>Horror</button>
-        <button onClick={() => handleFilterType("Adventure")}>Aventura</button>
-        <button onClick={() => handleFilterType("Drama")}>Drama</button>
-        <button onClick={() => handleFilterType("Thriller")}>Thriller</button>
-        <button onClick={() => handleFilterType("Sci-Fi")}>Sci-Fi</button>
-        <button onClick={() => handleFilterCountry("Venezuela")}>Venezuela</button>
-        <button onClick={() => handleFilterCountry("España")}>España</button>
-        <button onClick={() => handleFilterCountry("Argentina")}>Argentina</button>
-      </div>
-
-      <div className="carrousel-content" ref={thumbnailContainerRef}>
-        <div className="row">
-          <div className="column">
-          <button className="watch-video-button" onClick={() => setShowModal(true)}>Ver vídeo</button>
-            {currentItem && currentItem.urlCartel && (
-              <img
-                src={currentItem.urlCartel}
-                alt={currentItem.titulo}
-                className="poster-image"
-              />
-              
-              
-            )}
-          </div>
-          <div className="column">
-            <div className="description">
-              {currentItem && (
-                <>
-                  <h2>Título:  {currentItem.titulo}</h2>
-                  <p>País:  {currentItem.pais}</p>
-                  <p>Año:  {currentItem.año}</p>
-                  <p>Duración:  {currentItem.duracion}</p>
-                  <p>Género:  {Array.isArray(currentItem.tipo) ? currentItem.tipo.join(', ') : currentItem.tipo}</p>
-                  <p>Director:  {currentItem.director}</p>
-                  <p>Actores:  {currentItem.reparto}</p>
-                  <p>Cámara:  {currentItem.camara}</p>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="thumbnail-container">
-          {filteredResults.map((item, id) => (
-            
-            
-            <img
-              key={id}
-              src={item.urlCartel}
-              alt={item.titulo}
-              className={`thumbnail ${id === currentIndex ? 'active' : ''}`}
-              onClick={() => {
-                setCurrentIndex(id);
-                scrollPageToTop();
-              }}
-            />
-          
-          ))}
-        </div>
-      </div>
-        {/* Modal */}
-        {showModal && <ModalFilm onClose={() => setShowModal(false)} />}
+      <FilterButtons
+        onFilterType={handleFilterType}
+        onFilterCountry={handleFilterCountry}
+      />
+      <CarrouselContent
+        filteredResults={filteredResults}
+        currentItem={currentItem}
+        currentIndex={currentIndex}
+        thumbnailContainerRef={thumbnailContainerRef}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        scrollPageToTop={scrollPageToTop}
+        setCurrentIndex={setCurrentIndex}
+      />
     </div>
   );
 };
