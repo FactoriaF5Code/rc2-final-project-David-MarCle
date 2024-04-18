@@ -3,7 +3,7 @@ import logo from "../../assets/logoFilmNecting.png";
 import "./Header.css";
 import ModalLog from '../modalLog/ModalLog';
 import ModalUser from '../modalUser/ModalUser';
-import { NavLink } from "react-router-dom";
+
 
 const Header = () => {
   const [isLogModalOpen, setIsLogModalOpen] = useState(false);
@@ -18,9 +18,9 @@ const Header = () => {
   return (
     <header>
       <div className="headerContainer">
-        <img className="headerContainer__logo" src={logo} alt="" />
+        <a href="/"><img className="headerContainer__logo" src={logo} alt="" /></a>
         <nav className="headerContainer__nav">
-          <a className="headerContainer__nav--link" href="#">
+          <a className="headerContainer__nav--link" href="/films">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-movie" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#cb002b" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
@@ -33,6 +33,7 @@ const Header = () => {
               <path d="M16 16l4 0" />
             </svg>
             Films
+            
           </a>
           <a className="headerContainer__nav--link" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chair-director" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#cb002b" fill="none" strokeLinecap="round" strokeLinejoin="round">

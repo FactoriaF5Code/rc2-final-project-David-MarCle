@@ -1,5 +1,6 @@
 
 import ModalFilm from '../modalFilm/ModalFilm';
+import PropTypes from 'prop-types';
 
 const CarrouselContent = ({
   filteredResults,
@@ -33,7 +34,7 @@ const CarrouselContent = ({
               <p>Género:  {Array.isArray(currentItem.tipo) ? currentItem.tipo.join(', ') : currentItem.tipo}</p>
               <div className='buttons-container'>
                 <button className="watch-video-button" onClick={() => setShowModal(true)}>Ver vídeo</button>
-                <button className="info-button" >+ información</button>
+                <button className="info-button" >+  información</button>
               </div>
             </>
           )}
@@ -57,5 +58,15 @@ const CarrouselContent = ({
     {showModal && <ModalFilm videoUrl={currentItem.urlPelicula} onClose={() => setShowModal(false)} />}
   </div>
 );
+CarrouselContent.propTypes = {
+    filteredResults: PropTypes.array.isRequired,
+    currentItem: PropTypes.object,
+    currentIndex: PropTypes.number.isRequired,
+    thumbnailContainerRef: PropTypes.object.isRequired,
+    showModal: PropTypes.bool.isRequired,
+    setShowModal: PropTypes.func.isRequired,
+    scrollPageToTop: PropTypes.func.isRequired,
+    setCurrentIndex: PropTypes.func.isRequired
+  };
 
 export default CarrouselContent;

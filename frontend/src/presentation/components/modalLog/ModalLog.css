@@ -55,5 +55,11 @@
     align-items: center;
 
   }
-  
+  input {
+    border: none; 
+    border-bottom: 1px solid red; 
+    background-color: transparent; 
+    padding: 5px; 
+    outline: none; 
+  }
   

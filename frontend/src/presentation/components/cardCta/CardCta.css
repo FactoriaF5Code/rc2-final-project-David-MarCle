@@ -1,7 +1,7 @@
 main{
     
     background: black;
-    height: 100vh;
+    height: 70rem;
 }
 .mainContainer{
     display: flex;
@@ -13,7 +13,7 @@ main{
     margin-top: 6%;
     margin-left: 8rem;
 	width:20rem; 
-  height: 55rem; 
+  height: 40rem; 
   padding: 2rem; 
   color: white;
   border-radius: 2rem;
@@ -69,12 +69,10 @@ main{
     color: var(--white);
     font-size: 15px;
     font-weight: bold;
-    background-color: var(--btn-color);
+    background-color: transparent;
     border-radius: 1em;
     outline: none;
-    box-shadow: 0 0 1em .25em var(--glow-color),
-           0 0 4em 1em var(--glow-spread-color),
-           inset 0 0 .75em .25em var(--glow-color);
+    
     text-shadow: 0 0 .5em var(black);
     position: relative;
     transition: all 0.3s;
