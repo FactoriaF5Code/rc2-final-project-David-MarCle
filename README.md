@@ -58,13 +58,13 @@ Anuncios laborales
 Clonar el repositorio:
 
 ```
-(https://github.com/FactoriaF5Code/rc2-final-project-David-MarCle.git)
+https://github.com/FactoriaF5Code/rc2-final-project-David-MarCle.git
 
 ```
 
 
 ### FRONTEND
-Para instalar módulos de nodoe en carpeta frontend, ejecutar:
+Para instalar módulos de node en carpeta frontend, ejecutar:
 
 ```
 cd frontend
@@ -106,7 +106,7 @@ spring.datasource.password=greenfield
 En este documento esta desarrollado el Mockup, el User Journey y las historias de usuario
 
 ```
-[Mural](https://app.mural.co/t/filmnecting3812/m/filmnecting3812/1710244357695/76e0dccd272de465e0935e20d4bb9fe9ff9040c0?sender=udc62f149699db215ac6d3412)
+https://app.mural.co/t/filmnecting3812/m/filmnecting3812/1710244357695/76e0dccd272de465e0935e20d4bb9fe9ff9040c0?sender=udc62f149699db215ac6d3412
 ```
 
 # Estado
