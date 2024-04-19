@@ -99,144 +99,39 @@ spring.datasource.password=greenfield
 
 # Estructura de carpetas
 ```
+
 rc2-final-project-David-MarCle
-├─ .vscode
-│  └─ settings.json
-├─ docs
-│  └─ planing.md
 ├─ filmnectingproject
-│  ├─ .mvn
-│  │  └─ wrapper
-│  ├─ .vscode
-│  ├─ HELP.md
-│  ├─ mvnw
-│  ├─ mvnw.cmd
-│  ├─ pom.xml
 │  ├─ src
-│  │  ├─ main
-│  │  │  ├─ java
-│  │  │  │  └─ com
-│  │  │  │     └─ filmnecting
-│  │  │  │        └─ filmnectingproject
-│  │  │  │           ├─ controllers
-│  │  │  │           │  └─ FilmController.java
-│  │  │  │           ├─ FilmnectingprojectApplication.java
-│  │  │  │           ├─ models
-│  │  │  │           │  └─ Film.java
-│  │  │  │           ├─ repository
-│  │  │  │           │  └─ FilmRepository.java
-│  │  │  │           └─ services
-│  │  │  │              └─ FilmService.java
+│  │  │  │ └─ filmnectingproject
+│  │  │  │   ├─ CONTROLLERS
+│  │  │  │   ├─ MODELS
+│  │  │  │   ├─ REPOSITORY
+│  │  │  │   └─ SERVICES
 │  │  │  └─ resources
 │  │  │     ├─ application.properties
-│  │  │     ├─ static
-│  │  │     └─ templates
-│  │  └─ test
-│  │     └─ java
-│  │        └─ com
-│  │           └─ filmnecting
-│  │              └─ filmnectingproject
-│  │                 └─ FilmnectingprojectApplicationTests.java
-│  └─ target
-│     ├─ classes
-│     │  ├─ application.properties
-│     │  └─ com
-│     │     └─ filmnecting
-│     │        └─ filmnectingproject
-│     │           ├─ controllers
-│     │           │  └─ FilmController.class
-│     │           ├─ FilmnectingprojectApplication.class
-│     │           ├─ models
-│     │           │  └─ Film.class
-│     │           ├─ repository
-│     │           │  └─ FilmRepository.class
-│     │           └─ services
-│     │              └─ FilmService.class
-│     ├─ generated-sources
-│     │  └─ annotations
-│     ├─ generated-test-sources
-│     │  └─ test-annotations
-│     ├─ maven-status
-│     │  └─ maven-compiler-plugin
-│     │     ├─ compile
-│     │     │  └─ default-compile
-│     │     │     ├─ createdFiles.lst
-│     │     │     └─ inputFiles.lst
-│     │     └─ testCompile
-│     │        └─ default-testCompile
-│     │           ├─ createdFiles.lst
-│     │           └─ inputFiles.lst
-│     └─ test-classes
-│        └─ com
-│           └─ filmnecting
-│              └─ filmnectingproject
-│                 └─ FilmnectingprojectApplicationTests.class
 ├─ frontend
-│  ├─ .eslintrc.cjs
-│  ├─ index.html
 │  ├─ json_server
-│  │  ├─ data.json
-│  │  └─ utils.js
-│  ├─ package-lock.json
-│  ├─ package.json
-│  ├─ public
-│  │  ├─ favicon.ico
-│  │  └─ img
 │  ├─ src
-│  │  ├─ App.css
-│  │  ├─ App.jsx
-│  │  ├─ index.css
-│  │  ├─ main.jsx
-│  │  ├─ middleware
+│  │  ├─ MIDDELWARE
 │  │  │  ├─ context
-│  │  │  │  └─ MovieContext.jsx
 │  │  │  └─ router
-│  │  │     └─ AppRouter.jsx
-│  │  ├─ presentation
-│  │  │  ├─ assets
+│  │  ├─ PRESENTATION
 │  │  │  ├─ components
-│  │  │  │  ├─ cardCta
-│  │  │  │  │  ├─ CardCta.css
-│  │  │  │  │  └─ CardCta.jsx
-│  │  │  │  ├─ carrouselFilm
-│  │  │  │  │  ├─ CarrouselContent.jsx
-│  │  │  │  │  ├─ CarrouselFilm.css
-│  │  │  │  │  ├─ CarrouselFilm.jsx
-│  │  │  │  │  └─ FilterButtons.jsx
-│  │  │  │  ├─ header
-│  │  │  │  │  ├─ Header.css
-│  │  │  │  │  └─ Header.jsx
-│  │  │  │  ├─ hero
-│  │  │  │  │  ├─ Hero.css
-│  │  │  │  │  └─ Hero.jsx
-│  │  │  │  ├─ modalFilm
-│  │  │  │  │  ├─ ModalFilm.css
-│  │  │  │  │  └─ ModalFilm.jsx
-│  │  │  │  ├─ modalLog
-│  │  │  │  │  ├─ ModalLog.css
-│  │  │  │  │  └─ ModalLog.jsx
-│  │  │  │  └─ modalUser
-│  │  │  │     ├─ ModalUser.css
-│  │  │  │     └─ ModalUser.jsx
+│  │  │  │     └─ Componentes reutilizables
 │  │  │  └─ pages
-│  │  │     ├─ films
-│  │  │     │  ├─ films.css
-│  │  │     │  └─ Films.jsx
-│  │  │     └─ home
-│  │  │        └─ HomePage.jsx
-│  │  └─ services
-│  │     └─ MovieService.js
-│  └─ vite.config.js
-└─ README.md
-```
+│  │  │     ├─ Páginas del router
+│  │  └─ SERVICES
+│  │     └─ Servicios conexión Backend
 
+```
 
 # Desarrollo
 
 En este documento esta desarrollado el Mockup, el User Journey y las historias de usuario
 
 ```
-https://app.mural.co/t/filmnecting3812/m/filmnecting3812/1710244357695/76e0dccd272de465e0935e20d4bb9fe9ff9040c0?sender=udc62f149699db215ac6d3412
+[Mural](https://app.mural.co/t/filmnecting3812/m/filmnecting3812/1710244357695/76e0dccd272de465e0935e20d4bb9fe9ff9040c0?sender=udc62f149699db215ac6d3412)
 ```
 
 # Estado
