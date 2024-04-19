@@ -98,7 +98,7 @@ spring.datasource.password=greenfield
 
 
 # Estructura de carpetas
-
+```
 rc2-final-project-David-MarCle
 ├─ .vscode
 │  └─ settings.json
@@ -228,6 +228,7 @@ rc2-final-project-David-MarCle
 │  │     └─ MovieService.js
 │  └─ vite.config.js
 └─ README.md
+```
 
 
 # Desarrollo
