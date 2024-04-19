@@ -99,7 +99,136 @@ spring.datasource.password=greenfield
 
 # Estructura de carpetas
 
-![project Tree](/frontend/src/presentation/assets/ProjectTree.png)
+rc2-final-project-David-MarCle
+├─ .vscode
+│  └─ settings.json
+├─ docs
+│  └─ planing.md
+├─ filmnectingproject
+│  ├─ .mvn
+│  │  └─ wrapper
+│  ├─ .vscode
+│  ├─ HELP.md
+│  ├─ mvnw
+│  ├─ mvnw.cmd
+│  ├─ pom.xml
+│  ├─ src
+│  │  ├─ main
+│  │  │  ├─ java
+│  │  │  │  └─ com
+│  │  │  │     └─ filmnecting
+│  │  │  │        └─ filmnectingproject
+│  │  │  │           ├─ controllers
+│  │  │  │           │  └─ FilmController.java
+│  │  │  │           ├─ FilmnectingprojectApplication.java
+│  │  │  │           ├─ models
+│  │  │  │           │  └─ Film.java
+│  │  │  │           ├─ repository
+│  │  │  │           │  └─ FilmRepository.java
+│  │  │  │           └─ services
+│  │  │  │              └─ FilmService.java
+│  │  │  └─ resources
+│  │  │     ├─ application.properties
+│  │  │     ├─ static
+│  │  │     └─ templates
+│  │  └─ test
+│  │     └─ java
+│  │        └─ com
+│  │           └─ filmnecting
+│  │              └─ filmnectingproject
+│  │                 └─ FilmnectingprojectApplicationTests.java
+│  └─ target
+│     ├─ classes
+│     │  ├─ application.properties
+│     │  └─ com
+│     │     └─ filmnecting
+│     │        └─ filmnectingproject
+│     │           ├─ controllers
+│     │           │  └─ FilmController.class
+│     │           ├─ FilmnectingprojectApplication.class
+│     │           ├─ models
+│     │           │  └─ Film.class
+│     │           ├─ repository
+│     │           │  └─ FilmRepository.class
+│     │           └─ services
+│     │              └─ FilmService.class
+│     ├─ generated-sources
+│     │  └─ annotations
+│     ├─ generated-test-sources
+│     │  └─ test-annotations
+│     ├─ maven-status
+│     │  └─ maven-compiler-plugin
+│     │     ├─ compile
+│     │     │  └─ default-compile
+│     │     │     ├─ createdFiles.lst
+│     │     │     └─ inputFiles.lst
+│     │     └─ testCompile
+│     │        └─ default-testCompile
+│     │           ├─ createdFiles.lst
+│     │           └─ inputFiles.lst
+│     └─ test-classes
+│        └─ com
+│           └─ filmnecting
+│              └─ filmnectingproject
+│                 └─ FilmnectingprojectApplicationTests.class
+├─ frontend
+│  ├─ .eslintrc.cjs
+│  ├─ index.html
+│  ├─ json_server
+│  │  ├─ data.json
+│  │  └─ utils.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ public
+│  │  ├─ favicon.ico
+│  │  └─ img
+│  ├─ src
+│  │  ├─ App.css
+│  │  ├─ App.jsx
+│  │  ├─ index.css
+│  │  ├─ main.jsx
+│  │  ├─ middleware
+│  │  │  ├─ context
+│  │  │  │  └─ MovieContext.jsx
+│  │  │  └─ router
+│  │  │     └─ AppRouter.jsx
+│  │  ├─ presentation
+│  │  │  ├─ assets
+│  │  │  ├─ components
+│  │  │  │  ├─ cardCta
+│  │  │  │  │  ├─ CardCta.css
+│  │  │  │  │  └─ CardCta.jsx
+│  │  │  │  ├─ carrouselFilm
+│  │  │  │  │  ├─ CarrouselContent.jsx
+│  │  │  │  │  ├─ CarrouselFilm.css
+│  │  │  │  │  ├─ CarrouselFilm.jsx
+│  │  │  │  │  └─ FilterButtons.jsx
+│  │  │  │  ├─ header
+│  │  │  │  │  ├─ Header.css
+│  │  │  │  │  └─ Header.jsx
+│  │  │  │  ├─ hero
+│  │  │  │  │  ├─ Hero.css
+│  │  │  │  │  └─ Hero.jsx
+│  │  │  │  ├─ modalFilm
+│  │  │  │  │  ├─ ModalFilm.css
+│  │  │  │  │  └─ ModalFilm.jsx
+│  │  │  │  ├─ modalLog
+│  │  │  │  │  ├─ ModalLog.css
+│  │  │  │  │  └─ ModalLog.jsx
+│  │  │  │  └─ modalUser
+│  │  │  │     ├─ ModalUser.css
+│  │  │  │     └─ ModalUser.jsx
+│  │  │  └─ pages
+│  │  │     ├─ films
+│  │  │     │  ├─ films.css
+│  │  │     │  └─ Films.jsx
+│  │  │     └─ home
+│  │  │        └─ HomePage.jsx
+│  │  └─ services
+│  │     └─ MovieService.js
+│  └─ vite.config.js
+└─ README.md
+
 
 # Desarrollo
 
