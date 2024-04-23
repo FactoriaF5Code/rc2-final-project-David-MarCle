@@ -1,23 +1,17 @@
-
 import "./App.css";
-import { AppRouter } from './middleware/router/AppRouter';
-import { MovieProvider } from '../src/middleware/context/MovieContext'; 
-
+import {AppRouter} from './middleware/router/AppRouter';
+import {MovieProvider} from './middleware/context/MovieContext.jsx';
 
 
 function App() {
- 
 
-  return (
-    <>
-    <MovieProvider>
-    <AppRouter />
-    </MovieProvider>
-   
-    </>
-     
-       
-  )
+    return (
+        <>
+            <MovieProvider>
+                <AppRouter/>
+            </MovieProvider>
+        </>
+    )
 }
 
 export default App

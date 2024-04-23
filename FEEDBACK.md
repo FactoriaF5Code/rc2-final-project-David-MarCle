@@ -1,0 +1,2 @@
+No he visto grandes problemas en el repositorio, más allá de que muchos archivos no están formateados correctamente.
+Muy buen trabajo, David. Enhorabuena. Si tienes alguna duda concreta de cómo seguir desarrollando este proyecto, pregúntamelo estos días.
